@@ -1,0 +1,11 @@
+HTTP/1.1 200 Created
+Server: Apache-Coyote/1.1
+PROXY_SERVER_INFO: host=iparatest.com
+SERVER_INFO: iparatest.com
+CORRELATION-ID: 2a1b9202663bc
+Content-Language: *
+Date: Fri, 04 Jul 2014 14:09:00 GMT
+Content-Type: application/json
+Content-Length: 393
+
+{"bankId":111,"bankName":"Finansbank","cardFamilyName":"CARD FINANS","supportsInstallment":0,"type":1,"serviceProvider":1,"result":1,"cardThreeDSecureMandatory":0,"merchantThreeDSecureMandatory":1,"cvcMandatory":1,"businessCard":0,"installmentDetail":[{"requiredAmount":"100","requiredCommissionAmount":"000","installment":1,"merchantCommissionRate":"0.05"}],"supportsAgriculture":0}
