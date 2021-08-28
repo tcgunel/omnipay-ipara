@@ -10,7 +10,13 @@
         "3d secure",
         "ödeme",
         "cüzdan",
-        "bin sorgulama"
+        "bin sorgulama",
+        "link ile ödeme",
+        "kart ekleme",
+        "kayıtlı kartla ödeme",
+        "ön otorizasyon",
+        "otorizasyon kapama",
+        "login servisi"
     ],
     "homepage": "https://github.com/tcgunel/omnipay-ipara",
     "license": "MIT",
