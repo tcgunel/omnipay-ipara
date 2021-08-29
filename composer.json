@@ -52,5 +52,9 @@
         "omnipay/tests": "^4",
         "brianium/paratest": "*",
         "fzaninotto/faker": "*"
+    },
+    "scripts": {
+        "test": "vendor/bin/paratest --processes 6",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     }
 }
