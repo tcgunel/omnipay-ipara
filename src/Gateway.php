@@ -48,7 +48,10 @@ class Gateway extends AbstractGateway
 
 	public function purchase(array $parameters = [])
 	{
-		if (array_key_exists('secure', $parameters) && $parameters["secure"] === true) {
+		if (
+			(array_key_exists('secure', $parameters) && $parameters["secure"] === true) ||
+			$this->getSecure() === true
+		) {
 
 			return $this->createRequest('\Omnipay\Ipara\Message\EnrolmentRequest', $parameters);
 
