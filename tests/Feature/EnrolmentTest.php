@@ -10,6 +10,7 @@ use Omnipay\Ipara\Models\EnrolmentRequestModel;
 use Omnipay\Ipara\Models\InvoiceAddressModel;
 use Omnipay\Ipara\Models\ProductModel;
 use Omnipay\Ipara\Models\PurchaserModel;
+use Omnipay\Ipara\Models\RequestHeadersModel;
 use Omnipay\Ipara\Tests\TestCase;
 
 class EnrolmentTest extends TestCase
@@ -90,18 +91,18 @@ class EnrolmentTest extends TestCase
 						'productCode' => 'c7813278bc7fb6312ce59900eebf2720ca875293',
 						'productName' => 'Perspiciatis et facilis tempore facilis.',
 						'quantity'    => 6,
-						'price'       => 100,
+						'price'       => "100",
 					]),
 				],
 			]),
-			'headers'        => [
+			'headers'        => new RequestHeadersModel([
 				'transactionDate' => "2021-08-27 16:17:02",
 				'version'         => '1.0',
 				'token'           => 'ZZZZZ3333333333:+/GdtUUZfdAAu7p/061QaoOsgnA=',
-			],
+			]),
 		];
 
-		self::assertSame(json_encode($expected), json_encode($data));
+		self::assertEquals($expected, $data);
 	}
 
 	public function test_enrolment_request_saved_card()
@@ -173,18 +174,18 @@ class EnrolmentTest extends TestCase
 						'productCode' => 'c7813278bc7fb6312ce59900eebf2720ca875293',
 						'productName' => 'Perspiciatis et facilis tempore facilis.',
 						'quantity'    => 6,
-						'price'       => 100,
+						'price'       => "100",
 					]),
 				],
 			]),
-			'headers'        => [
+			'headers'        => new RequestHeadersModel([
 				'transactionDate' => "2021-08-27 16:17:02",
 				'version'         => '1.0',
 				'token'           => 'ZZZZZ3333333333:CHWK7bhBYHRzI/74Fy+maWvnZ7M=',
-			],
+			]),
 		];
 
-		self::assertSame(json_encode($expected), json_encode($data));
+		self::assertEquals($expected, $data);
 	}
 
 	public function test_enrolment_request_validation_error()

@@ -34,6 +34,15 @@ class Helper
 	 * @param $input
 	 * @param $var
 	 */
+	public static function format_price($input, &$var)
+	{
+		$var = $input * 100;
+	}
+
+	/**
+	 * @param $input
+	 * @param $var
+	 */
 	public static function format_echo($input, &$var)
 	{
 		$var = substr($input, 0, 255);
