@@ -6,9 +6,9 @@
 Omnipay gateway for Ipara. All the methods of Ipara implemented for easy usage.
 
 ## Requirements
-| PHP    | Package |
-|--------|---------|
-| ^7.3   | v1.0.0  |
+| PHP       | Package |
+|-----------|---------|
+| ^7.3-^8.0 | v1.0.0  |
 
 ## Installment
 
