@@ -114,8 +114,8 @@ class BinLookupTest extends TestCase
 
 		$this->assertEquals(new BinLookupResponseModel([
 			'result'                        => 0,
-			'errorMessage'                  => 'Girmiş olduğunuz tutar bilgisi hatalıdır. Lütfen tekrar deneyiniz.',
-			'errorCode'                     => 817,
+			'errorMessage'                  => 'Bin lookup failed.',
+			'errorCode'                     => NULL,
 			'bankId'                        => NULL,
 			'bankName'                      => NULL,
 			'cardFamilyName'                => NULL,
