@@ -5,6 +5,7 @@ namespace Omnipay\Ipara\Message;
 use JsonException;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
+use Omnipay\Ipara\Exceptions\OmnipayIparaBinLookupException;
 use Omnipay\Ipara\Models\BinLookupResponseModel;
 use Psr\Http\Message\ResponseInterface;
 
@@ -32,11 +33,24 @@ class BinLookupResponse extends AbstractResponse
 
 				$this->response = new BinLookupResponseModel($data);
 
+				if ((int)$this->response->result === 0) {
+
+					throw new OmnipayIparaBinLookupException('Bin lookup failed.');
+
+				}
+
 			} catch (JsonException $e) {
 
 				$this->response = new BinLookupResponseModel([
 					"result"       => 0,
 					"errorMessage" => $body,
+				]);
+
+			} catch (OmnipayIparaBinLookupException $e) {
+
+				$this->response = new BinLookupResponseModel([
+					"result"       => 0,
+					"errorMessage" => $e->getMessage(),
 				]);
 
 			}
