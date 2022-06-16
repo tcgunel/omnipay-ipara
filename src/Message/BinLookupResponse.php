@@ -49,7 +49,7 @@ class BinLookupResponse extends AbstractResponse
 			} catch (OmnipayIparaBinLookupException $e) {
 
 				$this->response = new BinLookupResponseModel([
-					"result"       => Status::ERROR,
+					"result"       => 0,
 					"errorMessage" => $e->getMessage(),
 				]);
 
