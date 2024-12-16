@@ -105,7 +105,7 @@ class PurchaseRequest extends RemoteAbstractRequest
                 "products" => array_map(function (Item $item) {
                     return new ProductModel([
                         "productCode" => hash("sha1", $item->getName() . $item->getPrice()),
-                        "productName" => substr($item->getName(), 0, 100),
+                        'productName' => mb_convert_encoding(substr($item->getName(), 0, 100), 'UTF-8', 'auto'),
                         "quantity"    => $item->getQuantity(),
                         "price"       => $item->getPrice(),
                     ]);
